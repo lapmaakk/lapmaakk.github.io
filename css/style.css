@@ -621,7 +621,7 @@ footer {
 .fade:nth-child(5) { transition-delay: 0.32s; }
 
 /* RESPONSIVE */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   #hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 64px 32px; }
   .hero-right { height: 50vw; min-height: 320px; position: relative; }
