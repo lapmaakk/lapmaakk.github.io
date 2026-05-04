@@ -8,8 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <!-- ── SEO -->
-<meta name="description" content="Lapin Maakuntakomppanian Kilta ry on Puolustusvoimien Lapin maakuntakomppanian tukiyhdistys. Tue vapaaehtoista maanpuolustusta Lapissa.">
+  <!-- SEO -->
 <meta name="keywords" content="Lapin Maakuntakomppanian Kilta, maakuntakomppania, maanpuolustus, Lappi, Rovaniemi, reserviläiset, vapaaehtoinen maanpuolustus">
 <meta name="author" content="Lapin Maakuntakomppanian Kilta ry">
 <meta name="robots" content="index, follow">
@@ -332,47 +331,46 @@
       <div class="form-side fade">
         <h3>Jätä yhteydenottopyyntö</h3>
         <p class="form-sub">Ota yhteyttä — vastataan pian.</p>
-
-        <form class="form" id="liity-form">
+        <form class="form" action="https://formsubmit.co/lapinmaakk@gmail.com" method="POST">
           <div class="fg">
-            <label>Yritys (jos kannatusjäsen)</label>
-            <input type="text" placeholder="Yrityksen nimi tai jätä tyhjäksi">
+            <label for="yritys">Yritys (jos kannatusjäsen)</label>
+            <input type="text" id="yritys" name="yritys" placeholder="Yrityksen nimi tai jätä tyhjäksi">
           </div>
           <div class="frow">
             <div class="fg">
-              <label>Etunimi *</label>
-              <input type="text" required placeholder="Matti">
+              <label for="etunimi">Etunimi *</label>
+              <input type="text" id="etunimi" name="etunimi" required placeholder="Matti">
             </div>
             <div class="fg">
-              <label>Sukunimi *</label>
-              <input type="text" required placeholder="Korhonen">
+              <label for="sukunimi">Sukunimi *</label>
+              <input type="text" id="sukunimi" name="sukunimi" required placeholder="Korhonen">
             </div>
           </div>
           <div class="frow">
             <div class="fg">
-              <label>Puhelin *</label>
-              <input type="tel" required placeholder="+358 40 000 0000">
+              <label for="puhelin">Puhelin *</label>
+              <input type="tel" id="puhelin" name="puhelin" required placeholder="+358 40 000 0000">
             </div>
             <div class="fg">
-              <label>Sähköposti *</label>
-              <input type="email" required placeholder="matti@email.fi">
+              <label for="email">Sähköposti *</label>
+              <input type="email" id="email" name="email" required placeholder="matti@email.fi">
             </div>
           </div>
           <div class="fg">
-            <label>Vuosi jolloin Suomi itsenäistyi? *</label>
-            <input type="text" required placeholder="1 9 _ _">
+            <label for="vuosi">Vuosi jolloin Suomi itsenäistyi? *</label>
+            <input type="text" id="vuosi" name="vuosi" required placeholder="1 9 _ _">
           </div>
           <div class="fg">
-            <label>Mahdollinen tuki tai viesti</label>
-            <textarea placeholder="Kerro vapaasti..."></textarea>
+            <label for="tuki">Mahdollinen tuki tai viesti</label>
+            <textarea id="tuki" name="tuki" placeholder="Kerro vapaasti..."></textarea>
           </div>
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://lapmaakk.github.io/index.html">
+          <input type="text" name="_honey" style="display:none">
           <button type="submit" class="btn btn-navy" style="width:100%;padding:14px 0;">
             Lähetä yhteydenottopyyntö
           </button>
         </form>
-        <div class="form-ok" id="liity-ok">
-          Yhteydenottopyyntösi on vastaanotettu. Otamme sinuun pian yhteyttä.
-        </div>
       </div>
 
     </div>
