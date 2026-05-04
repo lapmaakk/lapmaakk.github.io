@@ -4,104 +4,413 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lapin Maakuntakomppanian Kilta ry</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Lapin Maakuntakomppanian Kilta ry on Puolustusvoimien Lapin maakuntakomppanian tukiyhdistys. Vahva yhteys vapaaehtoiseen maanpuolustukseen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Navigaatio -->
-  <header class="kuva">
-    <nav class="navbar">
-      <ul>
-        <li><a href="#esittely">Esittely</a></li>
-        <li><a href="#toiminta">Tue toimintaa</a></li>
-        <li><a href="#liity">Liity jäseneksi</a></li>
-        <li><a href="#yhteystiedot">Yhteystiedot</a></li>
-      </ul>
-    </nav>
-    <div class="kuva-text">
-      <img src="kuvat/lapvaakuna.png" alt="Kilta logo" class="logo">
-      <h1>Lapin Maakuntakomppanian Kilta ry</h1>
-      <p>Vahva yhteys vapaaehtoiseen maanpuolustukseen</p>
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#hero" class="nav-logo">
+      <img src="kuvat/lapvaakuna.png" alt="Lapin vaakuna">
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Lapin Maakuntakomppanian Kilta ry</span>
+        <span class="nav-logo-sub"></span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#esittely">Esittely</a>
+      <a href="#toiminta">Tue toimintaa</a>
+      <a href="#galleria">Galleria</a>
+      <a href="#liity">Liity jäseneksi</a>
+      <a href="#yhteystiedot" class="nav-cta">Yhteystiedot</a>
     </div>
-  </header>
+    <div class="nav-hbg" id="nav-hbg">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
 
-  <!-- Sisältö -->
-  <main class="content">
+<nav class="mob-nav" id="mob-nav">
+  <a href="#esittely">Esittely</a>
+  <a href="#toiminta">Tue toimintaa</a>
+  <a href="#galleria">Galleria</a>
+  <a href="#liity">Liity jäseneksi</a>
+  <a href="#yhteystiedot">Yhteystiedot</a>
+</nav>
 
-    <section id="esittely">
-      <h2>Lapin Maakuntakomppanian Kilta ry on Puolustusvoimien Lapin maakuntakomppanian tukiyhdistys</h2>
-      <p>Puolustusvoimat kouluttaa ja varustaa oman maakuntakomppaniansa.</p>
-      <p>Lapin Maakuntakomppanian Kilta ry täydentää ja tukee tätä toimintaa tarjoamalla lisäresursseja, osaamista ja yhteisöllistä tukea. Killan hankkimat varat ja muu tuki kohdistetaan suoraan maakuntakomppanian vapaaehtoisten toiminnan hyväksi.</p>
-      <p>Kilta toimii täysin vapaaehtoisvoimin. Toimihenkilöille ei makseta palkkioita tai korvauksia, vaan kaikki panos annetaan yhteisen turvallisuuden edistämiseksi. Killan tukeminen on konkreettinen tapa tukea Lapin alueen kokonaisturvallisuutta ja maanpuolustusta.</p>
-    </section>
+<!-- HERO -->
+<section id="hero">
 
-    <section id="toiminta">
-      <h2>Toiminta</h2>
-      <p><strong>Anna tukesi Lapin vapaaehtoiselle maanpuolustukselle ja alueelliselle turvallisuudelle.</strong></p>
-      <p>Lapin Maakuntakomppanian Kilta ry:n varat käytetään Puolustusvoimien Lapin maakuntakomppanian koulutuksen ja toiminnan tukemiseen. Tuki Killalle on tuki oman kotiseudun turvallisuuden kehittämiselle.</p>
-      <p>Jäsenmaksu- ja muut tulot mahdollistavat muun muassa koulutusmateriaalien hankinnan, kouluttajien tukemisen sekä sellaisen materiaalin ja varustuksen hankkimisen, joka on tarpeen virka-apu- tai poikkeusolojen toiminnassa.</p>
+  <div class="hero-left">
+    <div class="hero-content">
+      <div class="hero-label">Rovaniemi · Lappi · Suomi</div>
+      <h1 class="hero-h1">
+        Lapin<br>
+        <em>Maakuntakomppanian</em><br>
+        Kilta ry
+      </h1>
+      <p class="hero-tagline">Vahva yhteys vapaaehtoiseen maanpuolustukseen</p>
+      <p class="hero-desc">
+        Lapin Maakuntakomppanian Kilta ry on Puolustusvoimien Lapin
+        maakuntakomppanian tukiyhdistys. Kaikki killan varat kohdistetaan
+        suoraan vapaaehtoisten toiminnan hyväksi.
+      </p>
+      <div class="hero-btns">
+        <a href="#liity" class="btn btn-gold">Liity jäseneksi</a>
+        <a href="#esittely" class="btn btn-outline-w">Lue lisää</a>
+      </div>
+    </div>
+  </div>
 
-      <p><strong>Liity henkilöjäseneksi</strong></p>
-      <p>Killan jäsenenä olet osa toimintaa, joka vahvistaa alueellista maanpuolustusta. Jäsenet saavat tiedotteita ja voivat osallistua killan järjestämiin tapahtumiin, koulutuksiin ja toimintaan. Jäsenmaksun tuotto käytetään suoraan maakuntakomppanian tukemiseen. Täytä jäsenlomake ja liity mukaan!</p>
+  <div class="hero-right">
+    <div class="hero-img-stack">
+      <img
+        class="hero-img-top"
+        src="kuvat/ampumarata-talvi.jpg"
+        alt="Ampumarata talvella"
+      >
+      <div class="hero-img-divider"></div>
+      <img
+        class="hero-img-bot"
+        src="kuvat/maasto-kesa.jpg"
+        alt="Maastoharjoitus kesällä"
+      >
+    </div>
+  </div>
 
-      <p><strong>Yrityksesi tai yhteisösi kannatusjäseneksi</strong></p>
-      <p>Yritykset ja yhteisöt voivat liittyä Killan kannatusjäseniksi. Kannatusjäsenet voivat halutessaan käyttää sähköistä tai painettua jäsenmerkkiä viestinä sitoutumisestaan yhteiseen turvallisuuteen. Liittyminen onnistuu jäsen- tai yhteydenottolomakkeella.</p>
+</section>
 
-      <p><strong>Tue toimintaa näkyvästi</strong></p>
-      <p>Voit tukea kiltaa myös näkyvästi esimerkiksi mainoksella tai ilmoituksella Killan julkaisuissa tai tapahtumissa. Näkyvyys on suoraa osallistumista alueelliseen maanpuolustustyöhön.</p>
+<!-- ESITTELY -->
+<section id="esittely" class="section s-white">
+  <div class="wrap">
+    <div class="g2">
 
-      <p><strong>Lahjoita tai osoita perintö</strong></p>
-      <p>Lapin Maakuntakomppanian Kilta ry voi sääntöjensä mukaan vastaanottaa lahjoituksia ja perintöjä, jotka käytetään sääntöjen mukaisesti maakuntakomppanian tukemiseen. Tavaralahjoitusten tulee olla sellaisia, jotka ovat suoraan käyttökelpoisia tuettavalle joukolle – kilta ei harjoita tavarakauppaa. Ennen lahjoitusta, ota yhteyttä Killan puheenjohtajaan. Rahalahjoituksia voi tehdä myös erikseen sovittavalla tavalla.</p>
-    </section>
+      <div>
+        <div class="sh">
+          <div class="label">Esittely</div>
+          <h2>Puolustusvoimien maakuntakomppanian tukiyhdistys</h2>
+        </div>
+        <div class="esittely-text">
+          <p class="fade">
+            Puolustusvoimat kouluttaa ja varustaa oman maakuntakomppaniansa.
+            Lapin Maakuntakomppanian Kilta ry täydentää ja tukee tätä
+            toimintaa tarjoamalla lisäresursseja, osaamista ja
+            yhteisöllistä tukea.
+          </p>
+          <p class="fade">
+            Killan hankkimat varat ja muu tuki kohdistetaan suoraan
+            maakuntakomppanian vapaaehtoisten toiminnan hyväksi.
+            Kilta toimii täysin vapaaehtoisvoimin, toimihenkilöille
+            ei makseta palkkioita tai korvauksia, vaan kaikki panos
+            annetaan yhteisen turvallisuuden edistämiseksi.
+          </p>
+          <p class="fade">
+            Killan tukeminen on konkreettinen tapa tukea Lapin alueen
+            kokonaisturvallisuutta ja maanpuolustusta.
+          </p>
+        </div>
+      </div>
 
-    <section id="liity">
-      <h2>Liity mukaan</h2>
-      <p>Monelle lappilaiselle ei ole elämäntilanteen, iän tai muun syyn vuoksi mahdollista osallistua aktiiviseen reserviläistoimintaan tai muuhun turvallisuustyöhön.</p>
-      <p>Kaikkien ei tarvitse osallistua kaikkeen – henkilökohtainen jäsenyys tai yrityksen kannatusjäsenyys on tapa olla rakentamassa yhteistä turvallisuutta rinta rinnan maakuntakomppanialaisten kanssa. Jäsenistö mahdollistaa toiminnan taloudellisesti ja vahvistaa alueen maanpuolustustahtoa.</p>
-      <p>Haluatko antaa tukesi? Jätä yhteydenottopyyntö.</p>
+      <div class="side-cards fade">
+        <div class="scard">
+          <div class="scard-label">Yhdistys</div>
+          <div class="scard-val">Lapin Maakuntakomppanian Kilta ry</div>
+          <div class="scard-sub">Rekisteröity yhdistys</div>
+        </div>
+        <div class="scard-row">
+          <div class="scard">
+            <div class="scard-label">Y-tunnus</div>
+            <div class="scard-val">3485590-4</div>
+          </div>
+          <div class="scard">
+            <div class="scard-label">Kotipaikka</div>
+            <div class="scard-val">Lappi</div>
+          </div>
+        </div>
+        <div class="scard">
+          <div class="scard-label">Puheenjohtaja</div>
+          <div class="scard-val">Niko Tohu</div>
+          <div class="scard-sub">lapinmaakk@gmail.com</div>
+        </div>
+        <div class="scard">
+          <div class="scard-label">Toimintaperiaate</div>
+          <div class="scard-val">Täysin vapaaehtoista</div>
+          <div class="scard-sub">Ei palkkioita toimihenkilöille</div>
+        </div>
+      </div>
 
-      <form class="lomake" action="https://formsubmit.co/lapinmaakk@gmail.com" method="POST">
-        <label for="yritys">Yritys</label>
-        <input type="text" id="yritys" name="yritys">
+    </div>
+  </div>
+</section>
 
-        <label for="etunimi">Etunimi *</label>
-        <input type="text" id="etunimi" name="etunimi" required>
+<hr class="rule">
 
-        <label for="sukunimi">Sukunimi *</label>
-        <input type="text" id="sukunimi" name="sukunimi" required>
+<!-- TOIMINTA -->
+<section id="toiminta" class="section s-snow">
+  <div class="wrap">
+    <div class="sh center">
+      <div class="label center">Tue toimintaa</div>
+      <h2>Konkreettisia tapoja osallistua</h2>
+      <p>
+        Anna tukesi Lapin vapaaehtoiselle maanpuolustukselle ja
+        alueelliselle turvallisuudelle. Killan varat käytetään
+        suoraan maakuntakomppanian koulutuksen ja toiminnan tukemiseen.
+      </p>
+    </div>
+    <div class="toiminta-grid">
 
-        <label for="puhelin">Puhelin *</label>
-        <input type="tel" id="puhelin" name="puhelin" required>
+      <div class="tblock fade">
+        <h3>Henkilöjäsenyys</h3>
+        <p>
+          Killan jäsenenä olet osa toimintaa, joka vahvistaa alueellista
+          maanpuolustusta. Jäsenet saavat tiedotteita ja voivat osallistua
+          killan järjestämiin tapahtumiin, koulutuksiin ja toimintaan.
+          Jäsenmaksun tuotto käytetään suoraan maakuntakomppanian
+          tukemiseen.
+        </p>
+        <a href="#liity" class="btn btn-outline">Täytä jäsenlomake</a>
+      </div>
 
-        <label for="email">Sähköposti *</label>
-        <input type="email" id="email" name="email" required>
+      <div class="tblock fade">
+        <h3>Yrityksen kannatusjäsenyys</h3>
+        <p>
+          Yritykset ja yhteisöt voivat liittyä killan kannatusjäseniksi.
+          Kannatusjäsenet voivat halutessaan käyttää sähköistä tai painettua
+          jäsenmerkkiä viestinä sitoutumisestaan yhteiseen turvallisuuteen.
+          Liittyminen onnistuu yhteydenottolomakkeella.
+        </p>
+        <a href="#liity" class="btn btn-outline">Ota yhteyttä</a>
+      </div>
 
-        <label for="vuosi">Vuosi jolloin Suomi itsenäistyi? *</label>
-        <input type="text" id="vuosi" name="vuosi" required>
+      <div class="tblock fade">
+        <h3>Näkyvä tukeminen</h3>
+        <p>
+          Voit tukea kiltaa näkyvästi esimerkiksi mainoksella tai
+          ilmoituksella killan julkaisuissa tai tapahtumissa. Näkyvyys on
+          suoraa osallistumista alueelliseen maanpuolustustyöhön.
+        </p>
+        <a href="#yhteystiedot" class="btn btn-outline">Yhteydenotto</a>
+      </div>
 
-        <label for="tuki">Mahdollinen tuki</label>
-        <textarea id="tuki" name="tuki" rows="4"></textarea>
+      <div class="tblock fade">
+        <h3>Lahjoitus tai perintö</h3>
+        <p>
+          Lapin Maakuntakomppanian Kilta ry voi säänöjensä mukaan vastaanottaa
+          lahjoituksia ja perintöjä, jotka käytetään maakuntakomppanian
+          tukemiseen. Tavaralahjoitusten tulee olla suoraan käyttökelpoisia
+          tuettavalle joukolle, kilta ei harjoita tavarakauppaa.
+          Ennen lahjoitusta ota yhteyttä killan puheenjohtajaan.
+        </p>
+        <a href="#yhteystiedot" class="btn btn-outline">Ota yhteyttä puheenjohtajaan</a>
+      </div>
 
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://lapmaakk.github.io/index.html">
-        <input type="text" name="_honey" style="display:none"> <!-- roskapostin esto -->
+    </div>
+  </div>
+</section>
 
-        <button type="submit">Lähetä yhteydenottopyyntö</button>
-      </form>
-    </section>
+<!-- GALLERIA  -->
+<section id="galleria" class="section s-navy">
+  <div class="wrap">
+    <div class="sh light">
+      <div class="label light">Galleria</div>
+      <h2>Toimintaa kuvissa</h2>
+      <p>Kuvia harjoituksista ja killan toiminnasta </p>
+    </div>
 
-    <section id="yhteystiedot">
-      <h2>Yhteystiedot</h2>
-      <p>Sähköposti: lapinmaakk@gmail.com<br>
-         Puheenjohtaja: Niko Tohu<br>
-         Y-tunnus: 3485590-4<br>
-         Kotipaikka: Lappi</p>
-    </section>
-  </main>
+    <div class="gallery-grid">
 
-  <footer>
-    <p>&copy; 2025 Lapin Maakuntakomppanian Kilta ry</p>
-  </footer>
+      <div class="gal-item tall fade"
+           data-src="kuvat/ampumarata-talvi.jpg"
+           data-caption="Ampumaharjoitus — talvi, Lappi">
+        <img src="kuvat/ampumarata-talvi.jpg" alt="Ampumarata talvella">
+        <div class="gal-overlay">
+          <h4>Ampumaharjoitus</h4>
+          <span>Talvi · Lappi</span>
+        </div>
+      </div>
 
+      <div class="gal-item fade"
+           data-src="kuvat/maasto-kesa.jpg"
+           data-caption="Maastoharjoitus — kesä, Lappi">
+        <img src="kuvat/maasto-kesa.jpg" alt="Maastoharjoitus kesällä">
+        <div class="gal-overlay">
+          <h4>Maastoharjoitus</h4>
+          <span>Kesä · Lappi</span>
+        </div>
+      </div>
+
+      <div class="gal-item fade"
+           data-src="kuvat/pkm.jpg"
+           data-caption="Konekivääriharjoitus — talvi">
+        <img src="kuvat/pkm.jpg" alt="Konekivääri">
+        <div class="gal-overlay">
+          <h4>Raskas ase — harjoitus</h4>
+          <span>Talvi · Lappi</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIITY -->
+<section id="liity" class="section s-white">
+  <div class="wrap">
+    <div class="g2">
+
+      <div>
+        <div class="sh">
+          <div class="label">Liity mukaan</div>
+          <h2>Jäsenyys on tuki kotiseudun turvallisuudelle</h2>
+        </div>
+        <div class="liity-cards">
+          <div class="lcard fade">
+            <h3>Henkilöjäsenyys</h3>
+            <p>
+              Monelle lappilaiselle ei ole elämäntilanteen, iän tai
+              muun syyn vuoksi mahdollista osallistua aktiiviseen
+              reserviläistoimintaan. Kaikkien ei tarvitse osallistua
+              kaikkeen, jäsenyys on tapa olla rakentamassa
+              yhteistä turvallisuutta rinta rinnan
+              maakuntakomppanialaisten kanssa.
+            </p>
+          </div>
+          <div class="lcard fade">
+            <h3>Yrityksen kannatusjäsenyys</h3>
+            <p>
+              Yrityksesi voi liittyä kannatusjäseneksi ja viestiä
+              konkreettisesta sitoutumisesta alueen kokonaisturvallisuuteen.
+              Liittyminen onnistuu yhteydenottolomakkeella.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-side fade">
+        <h3>Jätä yhteydenottopyyntö</h3>
+        <p class="form-sub">Ota yhteyttä — vastataan pian.</p>
+
+        <form class="form" id="liity-form">
+          <div class="fg">
+            <label>Yritys (jos kannatusjäsen)</label>
+            <input type="text" placeholder="Yrityksen nimi tai jätä tyhjäksi">
+          </div>
+          <div class="frow">
+            <div class="fg">
+              <label>Etunimi *</label>
+              <input type="text" required placeholder="Matti">
+            </div>
+            <div class="fg">
+              <label>Sukunimi *</label>
+              <input type="text" required placeholder="Korhonen">
+            </div>
+          </div>
+          <div class="frow">
+            <div class="fg">
+              <label>Puhelin *</label>
+              <input type="tel" required placeholder="+358 40 000 0000">
+            </div>
+            <div class="fg">
+              <label>Sähköposti *</label>
+              <input type="email" required placeholder="matti@email.fi">
+            </div>
+          </div>
+          <div class="fg">
+            <label>Vuosi jolloin Suomi itsenäistyi? *</label>
+            <input type="text" required placeholder="1 9 _ _">
+          </div>
+          <div class="fg">
+            <label>Mahdollinen tuki tai viesti</label>
+            <textarea placeholder="Kerro vapaasti..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-navy" style="width:100%;padding:14px 0;">
+            Lähetä yhteydenottopyyntö
+          </button>
+        </form>
+        <div class="form-ok" id="liity-ok">
+          Yhteydenottopyyntösi on vastaanotettu. Otamme sinuun pian yhteyttä.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- YHTEYSTIEDOT -->
+<section id="yhteystiedot" class="section s-navy">
+  <div class="wrap">
+    <div class="g2">
+
+      <div>
+        <div class="sh light">
+          <div class="label light">Yhteystiedot</div>
+          <h2>Ota yhteyttä</h2>
+          <p>Vastaamme viesteihin mahdollisimman nopeasti.</p>
+        </div>
+        <div class="yt-items">
+          <div class="yt-item fade">
+            <span class="yt-key">Sähköposti</span>
+            <span class="yt-val">
+              <a href="mailto:lapinmaakk@gmail.com">lapinmaakk@gmail.com</a>
+            </span>
+          </div>
+          <div class="yt-item fade">
+            <span class="yt-key">Puheenjohtaja</span>
+            <span class="yt-val">Niko Tohu</span>
+          </div>
+          <div class="yt-item fade">
+            <span class="yt-key">Y-tunnus</span>
+            <span class="yt-val">3485590-4</span>
+          </div>
+          <div class="yt-item fade">
+            <span class="yt-key">Kotipaikka</span>
+            <span class="yt-val">Lappi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade">
+        <div class="yt-note">
+          <p>
+            Lapin Maakuntakomppanian Kilta ry toimii täysin vapaaehtoisvoimin.
+            Killan tukeminen on konkreettinen tapa tukea Lapin alueen
+            kokonaisturvallisuutta ja maanpuolustusta. Jäsenmaksu- ja muut tulot
+            mahdollistavat koulutusmateriaalien hankinnan, kouluttajien tukemisen
+            sekä materiaalin ja varustuksen hankkimisen, joka on tarpeen
+            virka-apu- tai poikkeusolojen toiminnassa.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-in">
+    <span class="ft-left">
+      © 2025 Lapin Maakuntakomppanian Kilta ry
+    </span>
+    <div class="ft-right">
+      <a href="mailto:lapinmaakk@gmail.com">lapinmaakk@gmail.com</a>
+      <span>Y-tunnus 3485590-4</span>
+      <span>Lappi</span>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX  -->
+<div id="lightbox">
+  <div class="lb-close" id="lb-close">&#x2715;</div>
+  <img id="lb-img" src="kuvat/lapvaakuna.png" alt="" style="display:none;">
+  <div class="lb-caption" id="lb-caption"></div>
+</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>
