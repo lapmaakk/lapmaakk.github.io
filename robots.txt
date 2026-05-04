@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lapmaakk.github.io/sitemap.xml
