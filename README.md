@@ -10,10 +10,10 @@ kilta-site/
 ├── js/
 │   └── main.js         # JavaScript
 ├── kuvat/
-│   ├── lapvaakuna.png       # Lapin vaakuna (logo)
-│   ├── ampumarata-talvi.jpg # Hero-kuva (talvi, ampumarata)
-│   ├── maasto-kesa.jpg      # Hero-kuva (kesä, maasto)
-│   └── pkm.jpg              # Galleriakuva (konekivääri)
+│   ├── lapvaakuna.png       
+│   ├── ampumarata-talvi.jpg 
+│   ├── maasto-kesa.jpg      
+│   └── pkm.jpg              
 └── README.md
 ```
 
@@ -52,8 +52,8 @@ galleria-osion `.gal-item` elementeissä:
 
 ## Lomakkeen käyttöönotto
 
-Lomake on tällä hetkellä vain käyttöliittymä (frontend-only).
-Kytke se palvelinpuoleen esim.:
+Tehty formspree!
+
 
 - **Formspree**: `<form action="https://formspree.io/f/TUNNUS">`
 - **Netlify Forms**: lisää `netlify`-attribuutti form-tagiin
