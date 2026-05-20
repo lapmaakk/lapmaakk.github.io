@@ -230,34 +230,34 @@
       <h2>Toimintaa kuvissa</h2>
       <p>Kuvia harjoituksista ja killan toiminnasta</p>
     </div>
-    <div class="gallery-grid">
-      <div class="gal-item tall fade"
-           data-src="kuvat/ampumarata-talvi.jpg"
-           data-caption="Ampumaharjoitus - talvi, Lappi">
-        <img src="kuvat/ampumarata-talvi.jpg" alt="Ampumarata talvella">
-        <div class="gal-overlay">
-          <h4>Ampumaharjoitus</h4>
-          <span>Talvi · Lappi</span>
+
+    <!-- SLIDESHOW -->
+    <div class="slideshow">
+      <div class="slideshow-track" id="slideshow-track">
+        <div class="slide active" data-index="0">
+          <img src="kuvat/ampumarata-talvi.jpg" alt="Ampumaharjoitus talvella">
+          <div class="slide-caption">Ampumaharjoitus — talvi, Lappi</div>
+        </div>
+        <div class="slide" data-index="1">
+          <img src="kuvat/maasto-kesa.jpg" alt="Maastoharjoitus kesällä">
+          <div class="slide-caption">Maastoharjoitus — kesä, Lappi</div>
+        </div>
+        <div class="slide" data-index="2">
+          <img src="kuvat/pkm.jpg" alt="Konekivääri">
+          <div class="slide-caption">Raskas ase — harjoitus, Lappi</div>
         </div>
       </div>
-      <div class="gal-item fade"
-           data-src="kuvat/maasto-kesa.jpg"
-           data-caption="Maastoharjoitus - kesä, Lappi">
-        <img src="kuvat/maasto-kesa.jpg" alt="Maastoharjoitus kesällä">
-        <div class="gal-overlay">
-          <h4>Maastoharjoitus</h4>
-          <span>Kesä · Lappi</span>
-        </div>
+      <button class="slide-btn slide-prev" id="slide-prev" aria-label="Edellinen">&#8592;</button>
+      <button class="slide-btn slide-next" id="slide-next" aria-label="Seuraava">&#8594;</button>
+      <div class="slide-dots" id="slide-dots">
+        <button class="dot active" data-dot="0"></button>
+        <button class="dot" data-dot="1"></button>
+        <button class="dot" data-dot="2"></button>
       </div>
-      <div class="gal-item fade"
-           data-src="kuvat/pkm.jpg"
-           data-caption="Konekivääriharjoitus">
-        <img src="kuvat/pkm.jpg" alt="Konekivääri">
-        <div class="gal-overlay">
-          <h4>PKM - harjoitus</h4>
-          <span>Talvi · Lappi</span>
-        </div>
-      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:32px;">
+      <a href="galleria.html" class="btn btn-outline-w">Katso kaikki kuvat &#8594;</a>
     </div>
   </div>
 </section>
