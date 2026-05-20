@@ -653,93 +653,52 @@ footer {
   }
 }
 
-/* ── SLIDESHOW ───────────────────────────── */
-.slideshow {
-  position: relative;
-  overflow: hidden;
-  border-radius: 2px;
-}
-.slideshow-track {
-  position: relative;
-  height: 520px;
-}
-.slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.7s ease;
-  pointer-events: none;
-}
-.slide.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: brightness(0.75);
-}
-.slide-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 20px 28px;
-  background: linear-gradient(to top, rgba(28,43,58,0.9), transparent);
-  font-size: 0.88rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
-}
-.slide-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(28,43,58,0.7);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: #fff;
-  width: 48px;
-  height: 48px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-.slide-btn:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-}
-.slide-prev { left: 16px; }
-.slide-next { right: 16px; }
-.slide-dots {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 2;
-}
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.35);
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  padding: 0;
-}
-.dot.active {
-  background: var(--gold);
-  transform: scale(1.3);
-}
-@media (max-width: 768px) {
-  .slideshow-track { height: 60vw; min-height: 220px; }
-  .slide-btn { width: 38px; height: 38px; font-size: 1rem; }
-}
+// ── SLIDESHOW ──────────────────────────
+  const track = document.getElementById('slideshow-track');
+  if (track) {
+    const slides  = track.querySelectorAll('.slide');
+    const dots    = document.querySelectorAll('.dot');
+    const prevBtn = document.getElementById('slide-prev');
+    const nextBtn = document.getElementById('slide-next');
+    let current   = 0;
+    let timer     = null;
+
+    const goTo = (n, direction = 1) => {
+      const prev = current;
+      current = (n + slides.length) % slides.length;
+
+      slides[prev].classList.remove('active');
+      slides[prev].classList.add('prev');
+      dots[prev].classList.remove('active');
+
+      slides[current].style.transform = direction > 0
+        ? 'translateX(100%)'
+        : 'translateX(-100%)';
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+
+      setTimeout(() => {
+        slides[prev].classList.remove('prev');
+      }, 700);
+    };
+
+    const next = () => goTo(current + 1, 1);
+    const prev = () => goTo(current - 1, -1);
+
+    const startTimer = () => {
+      clearInterval(timer);
+      timer = setInterval(next, 4000);
+    };
+
+    prevBtn.addEventListener('click', () => { prev(); startTimer(); });
+    nextBtn.addEventListener('click', () => { next(); startTimer(); });
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const n = parseInt(dot.dataset.dot);
+        goTo(n, n > current ? 1 : -1);
+        startTimer();
+      });
+    });
+
+    startTimer();
+  }
