@@ -5,14 +5,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── NAV SCROLL SHADOW ─
+  // ── NAV SCROLL SHADOW ──────────────────
   const nav = document.getElementById('nav');
   const onScroll = () => {
     nav.classList.toggle('scrolled', window.scrollY > 30);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // ── ACTIVE NAV LINK ─
+  // ── ACTIVE NAV LINK ────────────────────
   const sections  = document.querySelectorAll('section[id]');
   const navLinks  = document.querySelectorAll('.nav-links a[href^="#"]');
   const setActive = () => {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   window.addEventListener('scroll', setActive, { passive: true });
 
-  // ── MOBILE NAV ─
+  // ── MOBILE NAV ─────────────────────────
   const hbg    = document.getElementById('nav-hbg');
   const mobNav = document.getElementById('mob-nav');
   const spans  = hbg ? hbg.querySelectorAll('span') : [];
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     a.addEventListener('click', closeMob)
   );
 
-  // ── FADE-IN OBSERVER ─
+  // ── FADE-IN OBSERVER ───────────────────
   const fadeEls = document.querySelectorAll('.fade');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeEls.forEach(el => el.classList.add('in'));
   }
 
-  // ── LIGHTBOX ─
+  // ── LIGHTBOX ───────────────────────────
   const lb      = document.getElementById('lightbox');
   const lbImg   = document.getElementById('lb-img');
   const lbCap   = document.getElementById('lb-caption');
@@ -93,10 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeLb();
   });
 
-  // ── SMOOTH SCROLL ─
+  // ── SMOOTH SCROLL ──────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
+      const href = a.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         const top = target.getBoundingClientRect().top + window.scrollY
