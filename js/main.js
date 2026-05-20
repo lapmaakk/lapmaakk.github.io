@@ -117,23 +117,34 @@ document.addEventListener('DOMContentLoaded', () => {
     let current   = 0;
     let timer     = null;
 
+    // Aseta alkutila
+    slides.forEach((s, i) => {
+      s.style.transform = i === 0 ? 'translateX(0)' : 'translateX(100%)';
+    });
+
     const goTo = (n, direction = 1) => {
       const prev = current;
       current = (n + slides.length) % slides.length;
+      if (prev === current) return;
 
-      slides[prev].classList.remove('active');
-      slides[prev].classList.add('prev');
-      dots[prev].classList.remove('active');
+      const incoming = direction > 0 ? 'translateX(100%)' : 'translateX(-100%)';
+      const outgoing = direction > 0 ? 'translateX(-100%)' : 'translateX(100%)';
 
-      slides[current].style.transform = direction > 0
-        ? 'translateX(100%)'
-        : 'translateX(-100%)';
+      slides[current].style.transition = 'none';
+      slides[current].style.transform  = incoming;
       slides[current].classList.add('active');
-      dots[current].classList.add('active');
 
-      setTimeout(() => {
-        slides[prev].classList.remove('prev');
-      }, 700);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          slides[current].style.transition = '';
+          slides[current].style.transform  = 'translateX(0)';
+          slides[prev].style.transform     = outgoing;
+          slides[prev].classList.remove('active');
+        });
+      });
+
+      dots[prev].classList.remove('active');
+      dots[current].classList.add('active');
     };
 
     const next = () => goTo(current + 1, 1);
