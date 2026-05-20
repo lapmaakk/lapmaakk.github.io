@@ -110,59 +110,30 @@ document.addEventListener('DOMContentLoaded', () => {
 // ── SLIDESHOW ──────────────────────────
   const track = document.getElementById('slideshow-track');
   if (track) {
-    const slides  = track.querySelectorAll('.slide');
-    const dots    = document.querySelectorAll('.dot');
+    const slides  = Array.from(track.querySelectorAll('.slide'));
+    const dots    = Array.from(document.querySelectorAll('.dot'));
     const prevBtn = document.getElementById('slide-prev');
     const nextBtn = document.getElementById('slide-next');
     let current   = 0;
     let timer     = null;
 
-    // Aseta alkutila
-    slides.forEach((s, i) => {
-      s.style.transform = i === 0 ? 'translateX(0)' : 'translateX(100%)';
-    });
-
-    const goTo = (n, direction = 1) => {
-      const prev = current;
+    const goTo = (n) => {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
       current = (n + slides.length) % slides.length;
-      if (prev === current) return;
-
-      const incoming = direction > 0 ? 'translateX(100%)' : 'translateX(-100%)';
-      const outgoing = direction > 0 ? 'translateX(-100%)' : 'translateX(100%)';
-
-      slides[current].style.transition = 'none';
-      slides[current].style.transform  = incoming;
       slides[current].classList.add('active');
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          slides[current].style.transition = '';
-          slides[current].style.transform  = 'translateX(0)';
-          slides[prev].style.transform     = outgoing;
-          slides[prev].classList.remove('active');
-        });
-      });
-
-      dots[prev].classList.remove('active');
       dots[current].classList.add('active');
     };
 
-    const next = () => goTo(current + 1, 1);
-    const prev = () => goTo(current - 1, -1);
-
     const startTimer = () => {
       clearInterval(timer);
-      timer = setInterval(next, 4000);
+      timer = setInterval(() => goTo(current + 1), 4000);
     };
 
-    prevBtn.addEventListener('click', () => { prev(); startTimer(); });
-    nextBtn.addEventListener('click', () => { next(); startTimer(); });
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const n = parseInt(dot.dataset.dot);
-        goTo(n, n > current ? 1 : -1);
-        startTimer();
-      });
+    prevBtn.addEventListener('click', () => { goTo(current - 1); startTimer(); });
+    nextBtn.addEventListener('click', () => { goTo(current + 1); startTimer(); });
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => { goTo(i); startTimer(); });
     });
 
     startTimer();
