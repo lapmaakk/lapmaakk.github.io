@@ -52,12 +52,8 @@ galleria-osion `.gal-item` elementeissä:
 
 ## Lomakkeen käyttöönotto
 
-Tehty formspree!
+Web3Forms
 
-
-- **Formspree**: `<form action="https://formspree.io/f/TUNNUS">`
-- **Netlify Forms**: lisää `netlify`-attribuutti form-tagiin
-- **EmailJS**: JavaScript-integraatio
 
 ## Väripaletti
 
