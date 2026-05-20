@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galleria — Lapin Maakuntakomppanian Kilta ry</title>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lapinmaakuntakomppania.fi/galleria.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .gal-page-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+    .gal-page-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 1;
+      background: var(--navy2);
+    }
+    .gal-page-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s, filter 0.35s;
+      filter: brightness(0.78) saturate(0.85);
+    }
+    .gal-page-item:hover img {
+      transform: scale(1.05);
+      filter: brightness(0.92) saturate(1);
+    }
+    .gal-page-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(28,43,58,0.85), transparent 50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gal-page-item:hover .gal-page-overlay { opacity: 1; }
+    .gal-page-overlay span {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-l);
+    }
+    @media (max-width: 768px) {
+      .gal-page-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .gal-page-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="index.html" class="nav-logo">
+      <img src="kuvat/lapvaakuna.png" alt="Lapin vaakuna">
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Lapin Maakuntakomppanian Kilta ry</span>
+        <span class="nav-logo-sub">Lappi — Maanpuolustus</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#esittely">Esittely</a>
+      <a href="index.html#toiminta">Tue toimintaa</a>
+      <a href="galleria.html" class="active">Galleria</a>
+      <a href="index.html#liity">Liity jäseneksi</a>
+      <a href="index.html#yhteystiedot" class="nav-cta">Yhteystiedot</a>
+    </div>
+    <div class="nav-hbg" id="nav-hbg">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<nav class="mob-nav" id="mob-nav">
+  <a href="index.html#esittely">Esittely</a>
+  <a href="index.html#toiminta">Tue toimintaa</a>
+  <a href="galleria.html">Galleria</a>
+  <a href="index.html#liity">Liity jäseneksi</a>
+  <a href="index.html#yhteystiedot">Yhteystiedot</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div style="padding: calc(64px + 56px) 0 48px; background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.06);">
+  <div class="wrap">
+    <div style="font-size:0.67rem; font-weight:600; letter-spacing:0.26em; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">
+      Kuvat
+    </div>
+    <h1 style="font-family:'EB Garamond',Georgia,serif; font-size:clamp(2.2rem,5vw,4rem); font-weight:500; color:#fff; margin-bottom:12px;">Galleria</h1>
+    <p style="color:rgba(255,255,255,0.55); max-width:500px;">
+      Kuvia killan harjoituksista ja toiminnasta. Klikkaa kuvaa suurentaaksesi.
+    </p>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="section s-navy" style="padding-top: 40px;">
+  <div class="wrap">
+    <div class="gal-page-grid" id="gal-grid">
+
+      <!-- Lisää kuvat tähän samalla kaavalla -->
+      <div class="gal-page-item"
+           data-src="kuvat/ampumarata-talvi.jpg"
+           data-caption="Ampumaharjoitus — talvi, Lappi">
+        <img src="kuvat/ampumarata-talvi.jpg" alt="Ampumaharjoitus talvella">
+        <div class="gal-page-overlay"><span>Ampumaharjoitus · Talvi</span></div>
+      </div>
+
+      <div class="gal-page-item"
+           data-src="kuvat/maasto-kesa.jpg"
+           data-caption="Maastoharjoitus — kesä, Lappi">
+        <img src="kuvat/maasto-kesa.jpg" alt="Maastoharjoitus kesällä">
+        <div class="gal-page-overlay"><span>Maastoharjoitus · Kesä</span></div>
+      </div>
+
+      <div class="gal-page-item"
+           data-src="kuvat/pkm.jpg"
+           data-caption="Konekivääriharjoitus — talvi">
+        <img src="kuvat/pkm.jpg" alt="Konekivääri">
+        <div class="gal-page-overlay"><span>Raskas ase · Talvi</span></div>
+      </div>
+
+      <!-- Kopioi yllä oleva div-blokki jokaiselle uudelle kuvalle -->
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-in">
+    <span class="ft-left">© 2025 Lapin Maakuntakomppanian Kilta ry</span>
+    <div class="ft-right">
+      <a href="mailto:lapinmaakk@gmail.com">lapinmaakk@gmail.com</a>
+      <span>Y-tunnus 3485590-4</span>
+      <span>Lappi</span>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <div class="lb-close" id="lb-close">&#x2715;</div>
+  <img id="lb-img" src="kuvat/lapvaakuna.png" alt="" style="display:none;">
+  <div class="lb-caption" id="lb-caption"></div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  // Galleria-sivun lightbox
+  document.querySelectorAll('.gal-page-item[data-src]').forEach(item => {
+    item.addEventListener('click', () => {
+      const lb    = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lb-img');
+      const lbCap = document.getElementById('lb-caption');
+      lbImg.src           = item.dataset.src;
+      lbImg.style.display = '';
+      lbCap.textContent   = item.dataset.caption || '';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+</script>
+</body>
+</html>
