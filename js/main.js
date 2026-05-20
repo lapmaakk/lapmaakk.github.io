@@ -107,4 +107,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+// ── SLIDESHOW ──────────────────────────
+  const track  = document.getElementById('slideshow-track');
+  if (track) {
+    const slides   = track.querySelectorAll('.slide');
+    const dots     = document.querySelectorAll('.dot');
+    const prevBtn  = document.getElementById('slide-prev');
+    const nextBtn  = document.getElementById('slide-next');
+    let current    = 0;
+    let timer      = null;
+
+    const goTo = (n) => {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    };
+    const next = () => goTo(current + 1);
+    const prev = () => goTo(current - 1);
+
+    const startTimer = () => {
+      clearInterval(timer);
+      timer = setInterval(next, 4000);
+    };
+
+    prevBtn.addEventListener('click', () => { prev(); startTimer(); });
+    nextBtn.addEventListener('click', () => { next(); startTimer(); });
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        goTo(parseInt(dot.dataset.dot));
+        startTimer();
+      });
+    });
+
+    startTimer();
+  }
+   
 });
