@@ -170,6 +170,21 @@
       document.body.style.overflow = 'hidden';
     });
   });
+
+  // Sulkeminen
+  const lb      = document.getElementById('lightbox');
+  const lbImg   = document.getElementById('lb-img');
+  const lbClose = document.getElementById('lb-close');
+
+  const closeLb = () => {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.style.display = 'none';
+  };
+
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 </script>
 </body>
 </html>
