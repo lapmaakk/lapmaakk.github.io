@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // ── ACTIVE NAV LINK ────────────────────
+  // ── ACTIVE NAV LINK -
   const sections  = document.querySelectorAll('section[id]');
   const navLinks  = document.querySelectorAll('.nav-links a[href^="#"]');
   const setActive = () => {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   window.addEventListener('scroll', setActive, { passive: true });
 
-  // ── MOBILE NAV ─────────────────────────
+  // ── MOBILE NAV ─
   const hbg    = document.getElementById('nav-hbg');
   const mobNav = document.getElementById('mob-nav');
   const spans  = hbg ? hbg.querySelectorAll('span') : [];
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     a.addEventListener('click', closeMob)
   );
 
-  // ── FADE-IN OBSERVER ───────────────────
+  // ── FADE-IN OBSERVER ─
   const fadeEls = document.querySelectorAll('.fade');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
@@ -67,7 +67,30 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeEls.forEach(el => el.classList.add('in'));
   }
 
-  // ── LIGHTBOX ───────────────────────────
+  // ── COUNTER ANIMATION ─
+  const counters = document.querySelectorAll('[data-count]');
+  const countIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el     = e.target;
+      const target = parseInt(el.dataset.count);
+      const sfx    = el.dataset.sfx || '';
+      const dur    = 1600;
+      let   start  = null;
+      const step   = (ts) => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / dur, 1);
+        el.textContent = Math.floor(p * target) + sfx;
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target + sfx;
+      };
+      requestAnimationFrame(step);
+      countIO.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(el => countIO.observe(el));
+
+  // ── LIGHTBOX ─
   const lb      = document.getElementById('lightbox');
   const lbImg   = document.getElementById('lb-img');
   const lbCap   = document.getElementById('lb-caption');
@@ -75,9 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.gal-item[data-src]').forEach(item => {
     item.addEventListener('click', () => {
-      lbImg.src           = item.dataset.src;
-      lbImg.style.display = '';
-      lbCap.textContent   = item.dataset.caption || '';
+      lbImg.src          = item.dataset.src;
+      lbCap.textContent  = item.dataset.caption || '';
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
     });
@@ -85,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeLb = () => {
     lb.classList.remove('open');
     document.body.style.overflow = '';
-    lbImg.style.display = 'none';
+    lbImg.src = '';
   };
   if (lbClose) lbClose.addEventListener('click', closeLb);
   lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
@@ -93,12 +115,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeLb();
   });
 
-  // ── SMOOTH SCROLL ──────────────────────
+  // ── CONTACT FORM ─
+  const form   = document.getElementById('liity-form');
+  const formOk = document.getElementById('liity-ok');
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled    = true;
+      btn.textContent = 'Lähetetään...';
+      setTimeout(() => {
+        form.style.display    = 'none';
+        formOk.style.display  = 'block';
+      }, 1000);
+    });
+  }
+
+  // ── SMOOTH SCROLL ─
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
-      const href = a.getAttribute('href');
-      if (href === '#') return;
-      const target = document.querySelector(href);
+      const target = document.querySelector(a.getAttribute('href'));
       if (target) {
         e.preventDefault();
         const top = target.getBoundingClientRect().top + window.scrollY
