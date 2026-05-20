@@ -108,24 +108,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 // ── SLIDESHOW ──────────────────────────
-  const track  = document.getElementById('slideshow-track');
+  const track = document.getElementById('slideshow-track');
   if (track) {
-    const slides   = track.querySelectorAll('.slide');
-    const dots     = document.querySelectorAll('.dot');
-    const prevBtn  = document.getElementById('slide-prev');
-    const nextBtn  = document.getElementById('slide-next');
-    let current    = 0;
-    let timer      = null;
+    const slides  = track.querySelectorAll('.slide');
+    const dots    = document.querySelectorAll('.dot');
+    const prevBtn = document.getElementById('slide-prev');
+    const nextBtn = document.getElementById('slide-next');
+    let current   = 0;
+    let timer     = null;
 
-    const goTo = (n) => {
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
+    const goTo = (n, direction = 1) => {
+      const prev = current;
       current = (n + slides.length) % slides.length;
+
+      slides[prev].classList.remove('active');
+      slides[prev].classList.add('prev');
+      dots[prev].classList.remove('active');
+
+      slides[current].style.transform = direction > 0
+        ? 'translateX(100%)'
+        : 'translateX(-100%)';
       slides[current].classList.add('active');
       dots[current].classList.add('active');
+
+      setTimeout(() => {
+        slides[prev].classList.remove('prev');
+      }, 700);
     };
-    const next = () => goTo(current + 1);
-    const prev = () => goTo(current - 1);
+
+    const next = () => goTo(current + 1, 1);
+    const prev = () => goTo(current - 1, -1);
 
     const startTimer = () => {
       clearInterval(timer);
@@ -136,7 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtn.addEventListener('click', () => { next(); startTimer(); });
     dots.forEach(dot => {
       dot.addEventListener('click', () => {
-        goTo(parseInt(dot.dataset.dot));
+        const n = parseInt(dot.dataset.dot);
+        goTo(n, n > current ? 1 : -1);
         startTimer();
       });
     });
