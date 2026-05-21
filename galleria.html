@@ -183,32 +183,58 @@
   <div class="lb-caption" id="lb-caption"></div>
 </div>
 
-<script src="js/main.js"></script>
 <script>
-  // Galleria-sivun lightbox
-  document.querySelectorAll('.gal-page-item[data-src]').forEach(item => {
-    item.addEventListener('click', () => {
-      const lb    = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lb-img');
-      const lbCap = document.getElementById('lb-caption');
-      lbImg.src           = item.dataset.src;
-      lbImg.style.display = '';
-      lbCap.textContent   = item.dataset.caption || '';
-      lb.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  // Sulkeminen
+  const items   = Array.from(document.querySelectorAll('.gal-page-item[data-src]'));
   const lb      = document.getElementById('lightbox');
   const lbImg   = document.getElementById('lb-img');
+  const lbCap   = document.getElementById('lb-caption');
   const lbClose = document.getElementById('lb-close');
+  const lbPrev  = document.getElementById('lb-prev');
+  const lbNext  = document.getElementById('lb-next');
+  let current   = 0;
+
+  const openLb = (index) => {
+    current             = index;
+    lbImg.src           = items[current].dataset.src;
+    lbImg.style.display = '';
+    lbCap.textContent   = items[current].dataset.caption || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
 
   const closeLb = () => {
     lb.classList.remove('open');
     document.body.style.overflow = '';
     lbImg.style.display = 'none';
   };
+
+  const showPrev = () => {
+    current = (current - 1 + items.length) % items.length;
+    lbImg.src         = items[current].dataset.src;
+    lbCap.textContent = items[current].dataset.caption || '';
+  };
+
+  const showNext = () => {
+    current = (current + 1) % items.length;
+    lbImg.src         = items[current].dataset.src;
+    lbCap.textContent = items[current].dataset.caption || '';
+  };
+
+  items.forEach((item, i) => item.addEventListener('click', () => openLb(i)));
+
+  lbClose.addEventListener('click', closeLb);
+  lbPrev.addEventListener('click', showPrev);
+  lbNext.addEventListener('click', showNext);
+
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape')     closeLb();
+    if (e.key === 'ArrowLeft')  showPrev();
+    if (e.key === 'ArrowRight') showNext();
+  });
+</script>
 
   lbClose.addEventListener('click', closeLb);
   lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
