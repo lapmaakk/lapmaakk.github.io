@@ -339,7 +339,7 @@ hr.rule { border: none; border-top: 1px solid var(--line); }
 .hero-right:hover .hero-img-top,
 .hero-right:hover .hero-img-bot { filter: brightness(0.85); }
 
-/* ── ESITTELY */
+/* ESITTELY */
 .esittely-text p { font-size: 1.02rem; margin-bottom: 18px; }
 .esittely-text p:last-child { margin-bottom: 0; }
 
@@ -369,64 +369,206 @@ hr.rule { border: none; border-top: 1px solid var(--line); }
 .scard-sub { font-size: 0.82rem; color: rgba(255,255,255,0.45); }
 .scard-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
 
-/* TOIMINTA */
-.toiminta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-.tblock {
-  background: var(--white);
-  padding: 34px 30px;
-  border-top: 3px solid var(--line);
-  transition: border-top-color 0.25s;
-}
-.tblock:hover { border-top-color: var(--gold); }
-.tblock:last-child { grid-column: span 2; }
-.tblock h3 { color: var(--ink); margin-bottom: 12px; font-size: 1.25rem; }
-.tblock p  { font-size: 0.94rem; margin-bottom: 20px; }
+/*  TUE TOIMINTAA */
 
-/* GALLERY */
-.gallery-grid {
+#toiminta .sh {
+  margin-bottom: 42px;
+}
+
+#toiminta .sh p {
+  max-width: 620px;
+  margin-top: 12px;
+}
+
+/* Kaksi päävaihtoehtoa rinnakkain */
+.support-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 280px;
-  gap: 3px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
-.gal-item { position: relative; overflow: hidden; cursor: pointer; }
-.gal-item.tall { grid-row: span 2; }
-.gal-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.6s, filter 0.35s;
-  filter: brightness(0.72) saturate(0.8);
+
+/* Yksittäinen kortti */
+.support-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  min-height: 270px;
+
+  background: var(--white);
+  border: 1px solid var(--line);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
-.gal-item:hover img {
-  transform: scale(1.05);
-  filter: brightness(0.88) saturate(1);
+
+.support-card:hover {
+  transform: translateY(-3px);
+  border-color: #c5b994;
+  box-shadow: 0 14px 38px rgba(28, 43, 58, 0.08);
 }
-.gal-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(28,43,58,0.88) 0%, transparent 55%);
+
+/* Numero vasemmalla */
+.support-card-number {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 22px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.gal-item:hover .gal-overlay { opacity: 1; }
-.gal-overlay h4 {
+  align-items: flex-start;
+  justify-content: center;
+
+  padding-top: 34px;
+
+  background: var(--navy);
+
   font-family: 'EB Garamond', Georgia, serif;
   font-size: 1.15rem;
   font-weight: 500;
-  color: #fff;
-  margin-bottom: 3px;
-}
-.gal-overlay span {
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
   color: var(--gold-l);
+
+  position: relative;
+}
+
+/* Kultainen pieni viiva numeron alle */
+.support-card-number::after {
+  content: '';
+  position: absolute;
+
+  top: 68px;
+  left: 50%;
+
+  width: 22px;
+  height: 1px;
+
+  background: var(--gold);
+
+  transform: translateX(-50%);
+}
+
+/* Kortin tekstialue */
+.support-card-content {
+  display: flex;
+  flex-direction: column;
+
+  padding: 34px 34px 30px;
+}
+
+.support-card-content h3 {
+  color: var(--ink);
+  margin-bottom: 14px;
+
+  font-size: 1.55rem;
+  line-height: 1.15;
+}
+
+.support-card-content p {
+  font-size: 0.94rem;
+  line-height: 1.75;
+
+  margin-bottom: 26px;
+
+  max-width: 430px;
+}
+
+/* Painike aina kortin alareunaan */
+.support-card-content .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Ensimmäisen kortin painike hieman vahvemmaksi */
+.support-card:first-child .btn {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+.support-card:first-child .btn:hover {
+  background: var(--navy2);
+  border-color: var(--navy2);
+  color: #fff;
+}
+
+/* Toisen kortin hover pysyy kultaisena */
+.support-card:last-child .btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+
+/* TUE TOIMINTAA — RESPONSIVE*/
+
+@media (max-width: 900px) {
+
+  .support-grid {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+  }
+
+  .support-card {
+    min-height: 240px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  #toiminta .sh {
+    margin-bottom: 30px;
+  }
+
+  .support-grid {
+    gap: 12px;
+  }
+
+  .support-card {
+    display: block;
+    min-height: 0;
+  }
+
+  .support-card-number {
+    height: 42px;
+    padding: 0 20px;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    font-size: 0.82rem;
+  }
+
+  .support-card-number::after {
+    top: 50%;
+    left: 50px;
+
+    width: 28px;
+
+    transform: translateY(-50%);
+  }
+
+  .support-card-content {
+    padding: 26px 24px 26px;
+  }
+
+  .support-card-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .support-card-content p {
+    font-size: 0.9rem;
+    margin-bottom: 22px;
+  }
+
+  .support-card-content .btn {
+    width: 100%;
+  }
+
 }
 
 /* LIGHTBOX */
@@ -654,8 +796,6 @@ footer {
   .g2 { grid-template-columns: 1fr; gap: 40px; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 240px; }
   .gal-item.tall { grid-row: span 1; }
-  .toiminta-grid { grid-template-columns: 1fr; }
-  .tblock:last-child { grid-column: span 1; }
 }
 @media (max-width: 768px) {
   :root { --nav-h: 60px; }
