@@ -3,242 +3,561 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Galleria - Lapin Maakuntakomppanian Kilta ry</title>
+
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://lapinmaakuntakomppania.fi/galleria.html">
+
+  <link
+    rel="canonical"
+    href="https://lapinmaakuntakomppania.fi/galleria.html">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
+
   <style>
-  .gal-page-grid {
-    columns: 3;
-    column-gap: 4px;
-  }
-  .gal-page-item {
-    break-inside: avoid;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    margin-bottom: 4px;
-    background: var(--navy2);
-  }
-  .gal-page-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s, filter 0.35s;
-    filter: brightness(0.78) saturate(0.85);
-  }
-  .gal-page-item:hover img {
-    transform: scale(1.04);
-    filter: brightness(0.92) saturate(1);
-  }
-  .gal-page-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(28,43,58,0.85), transparent 50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 16px;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .gal-page-item:hover .gal-page-overlay { opacity: 1; }
-  .gal-page-overlay span {
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold-l);
-  }
-  @media (max-width: 768px) {
-    .gal-page-grid { columns: 2; }
-  }
-  @media (max-width: 480px) {
-    .gal-page-grid { columns: 1; }
-  }
-</style>
+
+    .gal-page-grid {
+      columns: 3;
+      column-gap: 4px;
+    }
+
+    .gal-page-item {
+      break-inside: avoid;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      margin-bottom: 4px;
+      background: var(--navy2);
+    }
+
+    .gal-page-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s, filter 0.35s;
+      filter: brightness(0.78) saturate(0.85);
+    }
+
+    .gal-page-item:hover img {
+      transform: scale(1.04);
+      filter: brightness(0.92) saturate(1);
+    }
+
+    .gal-page-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(28,43,58,0.85),
+        transparent 50%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .gal-page-item:hover .gal-page-overlay {
+      opacity: 1;
+    }
+
+    .gal-page-overlay span {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-l);
+    }
+
+    @media (max-width: 768px) {
+      .gal-page-grid {
+        columns: 2;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gal-page-grid {
+        columns: 1;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
 
+<!-- NAV -->
 <nav id="nav">
   <div class="nav-in">
+
     <a href="index.html" class="nav-logo">
-      <img src="kuvat/lapvaakuna.png" alt="Lapin vaakuna">
+
+      <img
+        src="kuvat/lapvaakuna.png"
+        alt="Lapin vaakuna">
+
       <div class="nav-logo-text">
-        <span class="nav-logo-name">Lapin Maakuntakomppanian Kilta ry</span>
-        <span class="nav-logo-sub">Lappi</span>
+        <span class="nav-logo-name">
+          Lapin Maakuntakomppanian Kilta ry
+        </span>
+
+        <span class="nav-logo-sub">
+          Lappi
+        </span>
       </div>
+
     </a>
+
     <div class="nav-links">
-      <a href="index.html#esittely">Esittely</a>
-      <a href="index.html#toiminta">Tue toimintaa</a>
-      <a href="galleria.html" class="active">Galleria</a>
-      <a href="index.html#liity">Liity jäseneksi</a>
+
+      <a href="index.html#esittely">
+        Esittely
+      </a>
+
+      <a href="index.html#toiminta">
+        Tue toimintaa
+      </a>
+
+      <a
+        href="galleria.html"
+        class="active">
+        Galleria
+      </a>
+
+      <a
+        href="https://mpkl.fi/jasenille/"
+        target="_blank"
+        rel="noopener">
+        Liity jäseneksi
+      </a>
+
     </div>
+
     <div class="nav-hbg" id="nav-hbg">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+
   </div>
 </nav>
 
 <nav class="mob-nav" id="mob-nav">
-  <a href="index.html#esittely">Esittely</a>
-  <a href="index.html#toiminta">Tue toimintaa</a>
-  <a href="galleria.html">Galleria</a>
-  <a href="index.html#liity">Liity jäseneksi</a>
+
+  <a href="index.html#esittely">
+    Esittely
+  </a>
+
+  <a href="index.html#toiminta">
+    Tue toimintaa
+  </a>
+
+  <a href="galleria.html">
+    Galleria
+  </a>
+
+  <a
+    href="https://mpkl.fi/jasenille/"
+    target="_blank"
+    rel="noopener">
+    Liity jäseneksi
+  </a>
+
 </nav>
 
 <!-- PAGE HEADER -->
-<div style="padding: calc(64px + 56px) 0 48px; background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.06);">
+<div
+  style="
+    padding: calc(64px + 56px) 0 48px;
+    background: var(--navy);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  ">
+
   <div class="wrap">
-    <div style="font-size:0.67rem; font-weight:600; letter-spacing:0.26em; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">
+
+    <div
+      style="
+        font-size:0.67rem;
+        font-weight:600;
+        letter-spacing:0.26em;
+        text-transform:uppercase;
+        color:var(--gold);
+        margin-bottom:12px;
+      ">
       Kuvat
     </div>
-    <h1 style="font-family:'EB Garamond',Georgia,serif; font-size:clamp(2.2rem,5vw,4rem); font-weight:500; color:#fff; margin-bottom:12px;">Galleria</h1>
-    <p style="color:rgba(255,255,255,0.55); max-width:500px;">
-      Kuvia killan harjoituksista ja toiminnasta. Klikkaa kuvaa suurentaaksesi.
+
+    <h1
+      style="
+        font-family:'EB Garamond',Georgia,serif;
+        font-size:clamp(2.2rem,5vw,4rem);
+        font-weight:500;
+        color:#fff;
+        margin-bottom:12px;
+      ">
+      Galleria
+    </h1>
+
+    <p
+      style="
+        color:rgba(255,255,255,0.55);
+        max-width:500px;
+      ">
+      Kuvia killan harjoituksista ja toiminnasta.
+      Klikkaa kuvaa suurentaaksesi.
     </p>
+
   </div>
 </div>
 
 <!-- GALLERY -->
-<section class="section s-navy" style="padding-top: 40px;">
+<section
+  class="section s-navy"
+  style="padding-top:40px;">
+
   <div class="wrap">
+
     <div class="gal-page-grid" id="gal-grid">
 
-      <!-- Lisää kuvat tähän samalla kaavalla -->
-      <div class="gal-page-item"
-           data-src="kuvat/ampumarata-talvi.jpg"
-           data-caption="Ampumaharjoitus - talvi, Lappi">
-        <img src="kuvat/ampumarata-talvi.jpg" alt="Ampumaharjoitus talvella">
-        <div class="gal-page-overlay"><span>Ampumaharjoitus · Talvi</span></div>
+      <div
+        class="gal-page-item"
+        data-src="kuvat/ampumarata-talvi.jpg"
+        data-caption="Ampumaharjoitus - talvi, Lappi">
+
+        <img
+          src="kuvat/ampumarata-talvi.jpg"
+          alt="Ampumaharjoitus talvella">
+
+        <div class="gal-page-overlay">
+          <span>Ampumaharjoitus · Talvi</span>
+        </div>
+
       </div>
 
-      <div class="gal-page-item"
-           data-src="kuvat/maasto-kesa.jpg"
-           data-caption="Maastoharjoitus - kesä, Lappi">
-        <img src="kuvat/maasto-kesa.jpg" alt="Maastoharjoitus kesällä">
-        <div class="gal-page-overlay"><span>Maastoharjoitus · Kesä</span></div>
+      <div
+        class="gal-page-item"
+        data-src="kuvat/maasto-kesa.jpg"
+        data-caption="Maastoharjoitus - kesä, Lappi">
+
+        <img
+          src="kuvat/maasto-kesa.jpg"
+          alt="Maastoharjoitus kesällä">
+
+        <div class="gal-page-overlay">
+          <span>Maastoharjoitus · Kesä</span>
+        </div>
+
       </div>
 
-      <div class="gal-page-item"
-           data-src="kuvat/pkm.jpg"
-           data-caption="Konekivääriharjoitus - talvi">
-        <img src="kuvat/pkm.jpg" alt="Konekivääri">
-        <div class="gal-page-overlay"><span>Raskas ase · Talvi</span></div>
+      <div
+        class="gal-page-item"
+        data-src="kuvat/pkm.jpg"
+        data-caption="Konekivääriharjoitus - talvi">
+
+        <img
+          src="kuvat/pkm.jpg"
+          alt="Konekivääri">
+
+        <div class="gal-page-overlay">
+          <span>Raskas ase · Talvi</span>
+        </div>
+
       </div>
 
-      <div class="gal-page-item"
-           data-src="kuvat/ammuntaa.jpg"
-           data-caption="Ampumaratapäivä - talvi">
-        <img src="kuvat/ammuntaa.jpg" alt="Ampumaratapäivä">
-        <div class="gal-page-overlay"><span>Ampumaratapäivä · Talvi</span></div>
+      <div
+        class="gal-page-item"
+        data-src="kuvat/ammuntaa.jpg"
+        data-caption="Ampumaratapäivä - talvi">
+
+        <img
+          src="kuvat/ammuntaa.jpg"
+          alt="Ampumaratapäivä">
+
+        <div class="gal-page-overlay">
+          <span>Ampumaratapäivä · Talvi</span>
+        </div>
+
       </div>
 
-      <div class="gal-page-item"
-           data-src="kuvat/pst.jpg"
-           data-caption="pstharjoitus - talvi">
-        <img src="https://res.cloudinary.com/dw1xnqhm4/image/upload/pst_gp65an" alt="nlaw">
-        <div class="gal-page-overlay"><span>PST-harjoitus · Talvi</span></div>
+      <div
+        class="gal-page-item"
+        data-src="kuvat/pst.jpg"
+        data-caption="PST-harjoitus - talvi">
+
+        <img
+          src="https://res.cloudinary.com/dw1xnqhm4/image/upload/pst_gp65an"
+          alt="NLAW">
+
+        <div class="gal-page-overlay">
+          <span>PST-harjoitus · Talvi</span>
+        </div>
+
       </div>
 
-      <div class="gal-page-item"
-           data-src="kuvat/vartio.jpg"
-           data-caption="Vartiossa - talvi">
-        <img src="kuvat/vartio.jpg" alt="vartio">
-        <div class="gal-page-overlay"><span>Vartiossa · Talvi</span></div>
+      <div
+        class="gal-page-item"
+        data-src="kuvat/vartio.jpg"
+        data-caption="Vartiossa - talvi">
+
+        <img
+          src="kuvat/vartio.jpg"
+          alt="Vartio">
+
+        <div class="gal-page-overlay">
+          <span>Vartiossa · Talvi</span>
+        </div>
+
       </div>
 
-      <div class="gal-page-item"
-           data-src="kuvat/paraati.jpg"
-           data-caption="Paraati - talvi">
-        <img src="kuvat/paraati.jpg" alt="paraati">
-        <div class="gal-page-overlay"><span>Paraati · Talvi</span></div>
-      </div>
+      <div
+        class="gal-page-item"
+        data-src="kuvat/paraati.jpg"
+        data-caption="Paraati - talvi">
 
-      <!-- Kopioi yllä oleva div-blokki jokaiselle uudelle kuvalle -->
+        <img
+          src="kuvat/paraati.jpg"
+          alt="Paraati">
+
+        <div class="gal-page-overlay">
+          <span>Paraati · Talvi</span>
+        </div>
+
+      </div>
 
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="ft-in">
-    <span class="ft-left">© 2025 Lapin Maakuntakomppanian Kilta ry</span>
+
+    <span class="ft-left">
+      © 2025 Lapin Maakuntakomppanian Kilta ry
+    </span>
+
     <div class="ft-right">
-      <a href="mailto:lapinmaakk@gmail.com">lapinmaakk@gmail.com</a>
-      <span>Y-tunnus 3485590-4</span>
-      <span>Lappi</span>
+
+      <a href="mailto:lapinmaakk@gmail.com">
+        lapinmaakk@gmail.com
+      </a>
+
+      <span>
+        Y-tunnus 3485590-4
+      </span>
+
+      <span>
+        Lappi
+      </span>
+
     </div>
   </div>
 </footer>
 
 <!-- LIGHTBOX -->
 <div id="lightbox">
-  <div class="lb-close" id="lb-close">&#x2715;</div>
-  <button class="lb-nav lb-prev" id="lb-prev">&#8592;</button>
-  <img id="lb-img" src="kuvat/lapvaakuna.png" alt="" style="display:none;">
-  <button class="lb-nav lb-next" id="lb-next">&#8594;</button>
-  <div class="lb-caption" id="lb-caption"></div>
+
+  <div
+    class="lb-close"
+    id="lb-close">
+    &#x2715;
+  </div>
+
+  <button
+    class="lb-nav lb-prev"
+    id="lb-prev"
+    aria-label="Edellinen">
+    &#8592;
+  </button>
+
+  <img
+    id="lb-img"
+    src="kuvat/lapvaakuna.png"
+    alt=""
+    style="display:none;">
+
+  <button
+    class="lb-nav lb-next"
+    id="lb-next"
+    aria-label="Seuraava">
+    &#8594;
+  </button>
+
+  <div
+    class="lb-caption"
+    id="lb-caption">
+  </div>
+
 </div>
 
 <script>
-  const items   = Array.from(document.querySelectorAll('.gal-page-item[data-src]'));
-  const lb      = document.getElementById('lightbox');
-  const lbImg   = document.getElementById('lb-img');
-  const lbCap   = document.getElementById('lb-caption');
-  const lbClose = document.getElementById('lb-close');
-  const lbPrev  = document.getElementById('lb-prev');
-  const lbNext  = document.getElementById('lb-next');
-  let current   = 0;
+
+  const items =
+    Array.from(
+      document.querySelectorAll(
+        '.gal-page-item[data-src]'
+      )
+    );
+
+  const lb =
+    document.getElementById('lightbox');
+
+  const lbImg =
+    document.getElementById('lb-img');
+
+  const lbCap =
+    document.getElementById('lb-caption');
+
+  const lbClose =
+    document.getElementById('lb-close');
+
+  const lbPrev =
+    document.getElementById('lb-prev');
+
+  const lbNext =
+    document.getElementById('lb-next');
+
+  let current = 0;
+
 
   const openLb = (index) => {
-    current             = index;
-    lbImg.src           = items[current].dataset.src;
+
+    current = index;
+
+    lbImg.src =
+      items[current].dataset.src;
+
     lbImg.style.display = '';
-    lbCap.textContent   = items[current].dataset.caption || '';
+
+    lbCap.textContent =
+      items[current].dataset.caption || '';
+
     lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
+
+    document.body.style.overflow =
+      'hidden';
+
   };
+
 
   const closeLb = () => {
+
     lb.classList.remove('open');
+
     document.body.style.overflow = '';
+
     lbImg.style.display = 'none';
+
   };
+
 
   const showPrev = () => {
-    current = (current - 1 + items.length) % items.length;
-    lbImg.src         = items[current].dataset.src;
-    lbCap.textContent = items[current].dataset.caption || '';
+
+    current =
+      (
+        current - 1 + items.length
+      ) % items.length;
+
+    lbImg.src =
+      items[current].dataset.src;
+
+    lbCap.textContent =
+      items[current].dataset.caption || '';
+
   };
+
 
   const showNext = () => {
-    current = (current + 1) % items.length;
-    lbImg.src         = items[current].dataset.src;
-    lbCap.textContent = items[current].dataset.caption || '';
+
+    current =
+      (
+        current + 1
+      ) % items.length;
+
+    lbImg.src =
+      items[current].dataset.src;
+
+    lbCap.textContent =
+      items[current].dataset.caption || '';
+
   };
 
-  items.forEach((item, i) => item.addEventListener('click', () => openLb(i)));
 
-  lbClose.addEventListener('click', closeLb);
-  lbPrev.addEventListener('click', showPrev);
-  lbNext.addEventListener('click', showNext);
+  items.forEach(
+    (item, i) => {
 
-  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+      item.addEventListener(
+        'click',
+        () => openLb(i)
+      );
 
-  document.addEventListener('keydown', e => {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape')     closeLb();
-    if (e.key === 'ArrowLeft')  showPrev();
-    if (e.key === 'ArrowRight') showNext();
-  });
+    }
+  );
+
+
+  lbClose.addEventListener(
+    'click',
+    closeLb
+  );
+
+
+  lbPrev.addEventListener(
+    'click',
+    showPrev
+  );
+
+
+  lbNext.addEventListener(
+    'click',
+    showNext
+  );
+
+
+  lb.addEventListener(
+    'click',
+    e => {
+
+      if (e.target === lb) {
+        closeLb();
+      }
+
+    }
+  );
+
+
+  document.addEventListener(
+    'keydown',
+    e => {
+
+      if (
+        !lb.classList.contains('open')
+      ) {
+        return;
+      }
+
+      if (e.key === 'Escape') {
+        closeLb();
+      }
+
+      if (e.key === 'ArrowLeft') {
+        showPrev();
+      }
+
+      if (e.key === 'ArrowRight') {
+        showNext();
+      }
+
+    }
+  );
+
 </script>
 
-  lbClose.addEventListener('click', closeLb);
-  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
-</script>
 </body>
 </html>
