@@ -909,3 +909,15 @@ footer {
   .slideshow-track { height: 60vw; min-height: 220px; }
   .slide-btn { width: 38px; height: 38px; font-size: 1rem; }
 }
+
+/* YHTEYDENOTTO — kohdistus henkilöjäsenyyden tasolle */
+
+#yhteydenotto .form-side {
+  margin-top: 235px;
+}
+
+@media (max-width: 900px) {
+  #yhteydenotto .form-side {
+    margin-top: 0;
+  }
+}
